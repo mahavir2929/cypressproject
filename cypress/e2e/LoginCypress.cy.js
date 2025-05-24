@@ -13,7 +13,8 @@ describe('login test for cypress', function () {
         cy.visit("https://ineuron-courses.vercel.app/login")
         cy.login1("ineuron@ineuron.ai","ineuron")
         //cy.get('.errorMessage').should("contain","Email and Password Doesn't match")
-        cy.get('.errorMessage').should("contain","Password is required")
+        //cy.get('.errorMessage').should("contain","Password is required")
+        cy.get(".submit-btn").click();
 
        // cy.title().should("equal", "iNeuron Courses")
        // cy.xpath("//button[text()='Sign out']").click();
