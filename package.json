@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "smoke":"cypress run --spec ./cypress/e2e/LoginCypress.cy.js"
+    "smoke":"cypress run --spec ./cypress/e2e/LoginCypress.cy.js",
+    "regression":"cypress run --spec ./cypress/e2e/CreateCourse.cy.js"
 
   },
   "author": "",
