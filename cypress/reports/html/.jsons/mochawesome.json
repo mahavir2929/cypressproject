@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-21T13:29:04.972Z",
+    "end": "2025-05-21T13:29:15.626Z",
+    "duration": 10654,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bf06f065-87af-4302-96f2-e0c8cbce5614",
+      "title": "",
+      "fullFile": "cypress/e2e/CreateCourse1.cy.js",
+      "file": "cypress/e2e/CreateCourse1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1c5c5f2b-6b94-43fa-bd8d-3d7a0b75f08f",
+          "title": "create courses",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create new course",
+              "fullTitle": "create courses create new course",
+              "timedOut": null,
+              "duration": 9871,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/CreateCourse1.cy.js/create courses -- create new course (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://ineuron-courses.vercel.app/login\");\ncy.xpath(\"//input[@id='email1']\").type(this.datatest.userName);\ncy.xpath(\"//input[@id='password1']\").type(this.datatest.password);\ncy.xpath(\"//button[text()='Sign in']\").click();\ncy.contains('Manage').realHover();\ncy.wait(3000);\ncy.contains(\"Manage Courses\").click();\ncy.xpath(\"//table[@class='courses-table table table-borderless']//tbody/tr\").its('length').then(count => {\n  cy.log('found elements ' + count);\n  expect(count).to.be.greaterThan(0);\n});\ncy.xpath(\"//table[@class='courses-table table table-borderless']//tbody/tr\");\ncy.contains('Add New Course ').click({\n  force: true\n});\ncy.get('#thumbnail').attachFile('inheritacne.png');\ncy.get('#name').type(this.datatest.courseName);\ncy.get('#description1').highlight().should('be.visible').type(this.datatest.description);\ncy.get('#instructorNameId').type('Mahavir');\ncy.xpath(\"//div[@class='intructorsList']/p\").click();\ncy.get('#price').clear().type(this.datatest.price);\ncy.xpath(\"//input[@name='startDate1']\").click();\nconst today = new Date().getDate() + 3;\ncy.get('.react-datepicker__month-container') // Replace with your actual date cell class\n.contains(new RegExp(`^${today}$`)) // Match exact day number\n.click();\ncy.xpath(\"//input[@name='endDate']\").click();\n//to select the previous month\n//cy.xpath('//button[@class=\"react-datepicker__navigation react-datepicker__navigation--previous\"]').click();\n//const today1=new Date();\nconst today1 = new Date().getDate() + 5;\ncy.get('.react-datepicker__month-container') // Replace with your actual date cell class\n.contains(new RegExp(`^${today1}$`)) // Match exact day number\n.click();\ncy.xpath(\"//div[text()='Select Category']\").click();\ncy.xpath(\"//div[@class='menu-items']/button[3]\").click();\ncy.xpath(\"//button[text()='Save']\").click();\n//cy.xpath(\"//div[@class='manage-course']//tbody/tr[3]/td[text()='php']//preceding::input[1]\").check();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#description1`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#description1`, but never found it.\n    at Context.eval (webpack://cypresstests/./cypress/e2e/CreateCourse1.cy.js:30:11)",
+                "diff": null
+              },
+              "uuid": "efbe4e84-3a8b-4833-9504-ffd1a69ce0de",
+              "parentUUID": "1c5c5f2b-6b94-43fa-bd8d-3d7a0b75f08f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "efbe4e84-3a8b-4833-9504-ffd1a69ce0de"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9871,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "automation report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "autoOpen": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
